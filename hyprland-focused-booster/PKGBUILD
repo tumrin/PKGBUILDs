@@ -1,0 +1,31 @@
+pkgname=('hyprland-focused-booster')
+pkgver=0.1.0
+pkgrel=0
+arch=('any')
+license=('MIT')
+pkgdesc='Active application VRAM booster for Hyprland'
+makedepends=('cargo')
+depends=('dmemcg-booster' 'systemd')
+install=hyprland-focused-booster.install
+source=("https://github.com/tumrin/$pkgname/archive/refs/tags/$pkgver.tar.gz")
+sha256sums=('500d37ba11d458cbbf0c768da78f38511b5033e4c72446c4ac4a866a5f197a49')
+
+prepare() {
+  export RUSTUP_TOOLCHAIN=stable
+  cd "$srcdir/$pkgname-$pkgver" || exit
+  cargo fetch --locked --target "$CARCH-unknown-linux-gnu"
+}
+
+build() {
+  export RUSTUP_TOOLCHAIN=stable
+  export CARGO_TARGET_DIR=target
+  cd "$srcdir/$pkgname-$pkgver" || exit
+  cargo build --frozen --release --all-features
+}
+
+package() {
+  cd "$srcdir/$pkgname-$pkgver" || exit
+  install -Dm0755 "target/release/$pkgname" "$pkgdir/usr/bin/$pkgname"
+  install -Dm0644 "$pkgname.service" "$pkgdir/usr/lib/systemd/user/$pkgname.service"
+  install -Dm0644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}
