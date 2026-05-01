@@ -1,6 +1,6 @@
 pkgbase = hyprland-focused-booster
-	pkgdesc = Utility for prioritizing vram usage for currently active application.
-	pkgver = 0.1.0
+	pkgdesc = Active application VRAM booster for Hyprland
+	pkgver = 0.1.1
 	pkgrel = 0
 	install = hyprland-focused-booster.install
 	arch = any
@@ -8,7 +8,7 @@ pkgbase = hyprland-focused-booster
 	makedepends = cargo
 	depends = dmemcg-booster
 	depends = systemd
-	source = https://github.com/tumrin/hyprland-focused-booster/archive/refs/tags/0.1.0.tar.gz
-	sha256sums = 500d37ba11d458cbbf0c768da78f38511b5033e4c72446c4ac4a866a5f197a49
+	source = https://github.com/tumrin/hyprland-focused-booster/archive/refs/tags/0.1.1.tar.gz
+	sha256sums = 2454f4b4de130057fb11c8c2bec5d6b185555f834081727f38242121f2be5171
 
 pkgname = hyprland-focused-booster
