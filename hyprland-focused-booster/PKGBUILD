@@ -1,5 +1,5 @@
 pkgname=('hyprland-focused-booster')
-pkgver=0.1.1
+pkgver=0.1.2
 pkgrel=0
 arch=('any')
 license=('MIT')
@@ -8,7 +8,7 @@ makedepends=('cargo')
 depends=('dmemcg-booster' 'systemd')
 install=hyprland-focused-booster.install
 source=("https://github.com/tumrin/$pkgname/archive/refs/tags/$pkgver.tar.gz")
-sha256sums=('2454f4b4de130057fb11c8c2bec5d6b185555f834081727f38242121f2be5171')
+sha256sums=('1a10a68312efd65d02ad1b71cc9ca7aeeb10a1f4597499cdd8616e2b9fcd2de1')
 
 prepare() {
   export RUSTUP_TOOLCHAIN=stable
