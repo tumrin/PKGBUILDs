@@ -1,7 +1,9 @@
+# Maintainer: Tuomas Rinne <tuomas.rin@protonmail.com>
+
 pkgname=('hyprland-focused-booster')
 pkgver=0.1.2
-pkgrel=0
-arch=('any')
+pkgrel=1
+arch=('x86_64')
 license=('MIT')
 pkgdesc='Active application VRAM booster for Hyprland'
 makedepends=('cargo')
