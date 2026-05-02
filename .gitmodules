@@ -1,0 +1,3 @@
+[submodule "hyprland-focused-booster"]
+	path = hyprland-focused-booster
+	url = https://aur.archlinux.org/hyprland-focused-booster.git
